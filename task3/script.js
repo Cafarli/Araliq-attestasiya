@@ -44,13 +44,8 @@ class Messenger extends Message{
 let messenger = new Messenger()
 
 btn.addEventListener ('click',()=>{
-    // history.innerHTML=gettime();
-    // main.innerHTML+= messenger.show_history();
     messenger.send(sender.value,message.value, gettime());
     sender.value ='';
     message.value='';
     messenger.show_history();
 })
-
-// messenger.send(sender,message);
-// messenger.show_history();
