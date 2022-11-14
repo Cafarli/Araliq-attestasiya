@@ -1,0 +1,8 @@
+.main input, textarea{
+    display: block;
+}
+
+.main label,button{
+    margin: 10px 0px;
+    display: block;
+}
