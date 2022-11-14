@@ -4,8 +4,8 @@ class Message{
         this.content = content;
         this.send_time = send_time;
     }
-    toString(owner,content,send_time){
-        return `Owner: ${this.owner}; Message content: ${this.content}; Send time: +${this.send_time}`
+    toString(){
+        return `${this.send_time} ${this.owner}: ${this.content}`
     }
 }
 
@@ -17,17 +17,17 @@ function gettime() {
 class Messenger extends Message{
     constructor(owner, content){
         super(owner, content);
+        this.messages = [];
     }
 
     show_history(){
         this.messages.forEach(element => {
-            var message = new Message();
-            console.log(message.toString(element[0],element[1],element[2]));
+            console.log(element.toString());
         });
     }
     send(author, text){
-        var messages = [];
-        messages.push([this.owner,this.content, gettime()]);
+        var message = new Message(author,text,gettime());
+        this.messages.push(message);
     }
 }
 
